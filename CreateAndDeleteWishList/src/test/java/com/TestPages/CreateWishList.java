@@ -11,24 +11,16 @@ import com.pagesobject.WishListPage;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.BeforeClass;
 
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import javax.swing.JOptionPane;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 
@@ -39,7 +31,7 @@ public class CreateWishList
 	WishListPage WP;
 	String explistname1 = "Private";
 	String explistname2 = "Public";
-	String explistname3 = "Private";
+	String explistname3 = "Private!!";
 	String explistname4 = "Private";
 	String explistname5 = "Apple iPhone 11 Pro Max (256GB) - Gold";
 	
@@ -50,8 +42,9 @@ public class CreateWishList
 	public void beforeClass()
 	{
 		System.setProperty("webdriver.chrome.driver","C:\\Training\\Jar Files\\Drivers\\chromedriver.exe");
-		driver = new ChromeDriver();
-		driver.manage().window().maximize();
+		driver = new ChromeDriver();	
+		
+		//driver.manage().window().maximize();
 		driver.get(url);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
@@ -148,6 +141,7 @@ public class CreateWishList
 			  }
 	}
 
+	
 	@Test(dependsOnMethods = "ThirdTest") // ------------------------------------------------Phones
 	public void FourthTest() throws InterruptedException
 	{
@@ -166,6 +160,7 @@ public class CreateWishList
 			  }
 	}
 
+	
 	@Test(dependsOnMethods = "FourthTest") // ---------------------------------------------------Phones2
 	public void FifthTest() throws InterruptedException
 	{
@@ -188,6 +183,7 @@ public class CreateWishList
 	@BeforeMethod
 	public void beforeMethod()
 	{
+		
 
 	}
 
